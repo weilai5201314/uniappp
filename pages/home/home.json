@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents":{
+    "mp-form_page":"/miniprogram_npm/weui-miniprogram/form/form",
+    "mp-search-bar":"/miniprogram_npm/weui-miniprogram/searchbar/searchbar"
+  }
 }

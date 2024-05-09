@@ -1,38 +1,59 @@
-{  
-  "pages": [  
-    "pages/index/index",  
-    "pages/logs/logs",  
-    "pages/home/home"  
-  ],  
-  "window": {  
-    "navigationBarTextStyle": "black",  
-    "navigationBarTitleText": "xxx交易平台",  
-    "navigationBarBackgroundColor": "#ffffff"  
-  },  
-  "tabBar": {  
-    "color": "#7A7E83",  
-    "selectedColor": "#3cc51f",  
-    "backgroundColor": "#ffffff",  
-    "borderStyle": "black",  
-    "list": [  
-      {  
-        "pagePath": "pages/home/home",  
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/settings/settings",
+    "pages/shoppingcart/shoppingcart",
+    "pages/add/add",
+    "pages/chat/chat"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "xxx交易平台",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [{
+        "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "./images/tabBar/首页.png",
         "selectedIconPath": "./images/tabBar/首页.png"
-      },  
-      {  
-        "pagePath": "pages/logs/logs",  
-        "text": "我的" ,
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "信息",
+        "iconPath": "./images/tabBar/评论.png",
+        "selectedIconPath": "./images/tabBar/评论.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "发布",
+        "iconPath": "./images/tabBar/增加.png",
+        "selectedIconPath": "./images/tabBar/增加.png"
+      },
+      {
+        "pagePath": "pages/shoppingcart/shoppingcart",
+        "text": "购物车",
+        "iconPath": "./images/tabBar/订单.png",
+        "selectedIconPath": "./images/tabBar/订单.png"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "我的",
         "iconPath": "/images/tabBar/更多.png",
         "selectedIconPath": "/images/tabBar/更多.png"
-        
-      }  
-      
-    ]  
-  },  
-  "style": "v2",  
-  
-  "sitemapLocation": "sitemap.json",  
-  "lazyCodeLoading": "requiredComponents"  
+
+      }
+
+    ]
+  },
+  "style": "v2",
+
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }
