@@ -1,0 +1,23 @@
+<view class="container">
+    <!-- 主页标题 -->
+    <view class="title">欢迎来到我们的主页！</view>
+
+    <!-- 主页内容 -->
+    <view class="content">
+        <view class="section">
+            <view class="section-title">热门商品</view>
+            <!-- 这里可以展示一些热门商品的列表 -->
+        </view>
+        <view class="section">
+            <view class="section-title">最新活动</view>
+            <!-- 这里可以展示一些最新活动的信息 -->
+        </view>
+    </view>
+
+    <!-- 底部导航栏 -->
+    <view class="footer">
+        <navigator url="/pages/products/products" class="nav-item">商品列表</navigator>
+        <navigator url="/pages/about/about" class="nav-item">关于我们</navigator>
+        <!-- 可以根据需要添加更多导航链接 -->
+    </view>
+</view>

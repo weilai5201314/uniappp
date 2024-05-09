@@ -60,3 +60,4 @@ page {
 .nickname-input {
   flex: 1;
 }
+
