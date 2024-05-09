@@ -1,0 +1,29 @@
+<view class="container">  
+
+     <!-- 搜索栏 -->  
+     <view class="search-bar">  
+        <input class="search-input" type="text" placeholder="请输入搜索关键词" bindinput="handleInput" />  
+        <button class="search-btn" bindtap="handleSearch">搜索</button>  
+    </view>
+    
+    <!-- 主页标题 -->  
+    <view class="title">欢迎来到我们的主页！</view>  
+  
+    <!-- 主页内容 -->  
+    <view class="content">  
+        <view class="section">  
+            <view class="section-title">热门商品</view>  
+            <!-- 这里展示热门商品的列表 -->  
+            <!-- 使用 wx:for 指令来循环渲染商品列表 -->  
+        </view>  
+        <view class="section">  
+            <view class="section-title">最新活动</view>  
+            <!-- 这里展示最新活动的信息 -->  
+            <!-- 可能是文本、图片或链接 -->  
+        </view>  
+        <!-- 可以继续添加更多内容区域 -->  
+    </view>  
+  
+    <!-- 移除底部的模拟导航栏，因为您已经有 tabBar 了 -->  
+    <!-- 底部 tabBar 会在整个应用的页面底部显示，无需在单个页面中添加 -->  
+</view>
