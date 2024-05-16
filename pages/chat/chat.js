@@ -1,24 +1,9 @@
-// pages/chat/chat.js
-Component({
-
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-
+const base64 = require('../../images/base64');
+Page({
+  mixins: [require('../mixin/common')],
+  onLoad() {
+    this.setData({
+      icon: base64.icon20,
+    });
   },
-
-  /**
-   * 组件的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 组件的方法列表
-   */
-  methods: {
-
-  }
-})
+});

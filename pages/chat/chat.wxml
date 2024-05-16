@@ -1,2 +1,61 @@
-<!--pages/chat/chat.wxml-->
-<text>pages/chat/chat.wxml</text>
+<page-meta root-font-size="system"/>
+<view class="page" data-weui-theme="{{theme}}" data-weui-mode="{{mode}}">
+  
+  <view class="page__bd">
+
+    <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+
+            <view class="weui-cell weui-cell_example " aria-role="option">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}"></image>
+                </view>
+                <view class="weui-cell__bd">标题文字</view>
+                <view class="weui-cell__ft">说明文字</view>
+            </view>
+
+            <view class="weui-cell weui-cell_example " aria-role="option">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}"></image>
+                </view>
+                <view class="weui-cell__bd">标题文字</view>
+                <view class="weui-cell__ft">说明文字</view>
+            </view>
+
+            <view class="weui-cell weui-cell_example " aria-role="option">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}"></image>
+                </view>
+                <view class="weui-cell__bd">标题文字</view>
+                <view class="weui-cell__ft">说明文字</view>
+            </view>
+
+            <view class="weui-cell weui-cell_example " aria-role="option">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}"></image>
+                </view>
+                <view class="weui-cell__bd">标题文字</view>
+                <view class="weui-cell__ft">说明文字</view>
+            </view>
+
+            <view class="weui-cell weui-cell_example " aria-role="option">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}"></image>
+                </view>
+                <view class="weui-cell__bd">标题文字</view>
+                <view class="weui-cell__ft">说明文字</view>
+            </view>
+
+            <view class="weui-cell weui-cell_example " aria-role="option">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}"></image>
+                </view>
+                <view class="weui-cell__bd">标题文字</view>
+                <view class="weui-cell__ft">说明文字</view>
+            </view>
+
+        </view>
+  </view>
+
+
+</view>

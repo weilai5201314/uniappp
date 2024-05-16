@@ -1,4 +1,4 @@
-<page-meta root-font-size="system" />
+<page-meta root-font-size="system"/>
 <view class="page" data-weui-theme="{{theme}}" data-weui-mode="{{mode}}">
 
   <view class="page__bd">
@@ -48,4 +48,7 @@
 		</view>
 
   </view>
+
 </view>
+
+
