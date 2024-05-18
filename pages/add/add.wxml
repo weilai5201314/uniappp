@@ -54,7 +54,8 @@
             <view class="weui-cells weui-cells_form">
               <view class="weui-cell" hover-class="weui-cell_active">
                 <view class="weui-cell__bd" >
-                  <textarea class="weui-textarea" placeholder="请描述商品的特性、功能、尺寸、颜色等信息" placeholder-class="weui-input__placeholder" rows="3" bindchange="bindDescreption"></textarea>
+                  <textarea class="weui-textarea" placeholder="请描述商品的特性、功能、尺寸、颜色等信息" placeholder-class="weui-input__placeholder" rows="3" bindchange="bindDescreption"
+                  bindblur="bindDescription"></textarea>
                   <view aria-role="option" class="weui-textarea-counter"><span>0</span>/200</view>
                 </view>
               </view>

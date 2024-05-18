@@ -16,7 +16,8 @@ Page({
       openid: openid
     });
   },
-  bindDescription(e) {
+  bindDescription:function(e) {
+    console.log(e.detail.value)
     this.setData({
       description: e.detail.value,
     });
@@ -43,7 +44,7 @@ Page({
     const openid = this.data.openid;
     const productName = this.data.productName;
     const price = this.data.price;
-    // const description = this.data.description;
+    const description = this.data.description;
     const category = this.data.array3[this.data.value3]; // 获取选择的种类
     // console.log(description)
 
@@ -56,7 +57,7 @@ Page({
         openid: openid,
         productName: productName,
         price: price,
-        // description: description,
+        description: description,
         category: category,
         // 其他字段根据需要添加
       },
