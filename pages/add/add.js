@@ -7,7 +7,8 @@ Page({
     productName: '', // 商品名称
     price: '', // 价格
     description: '', // 商品描述
-    openid: ''
+    openid: '',
+    quantity: '' // 商品数量
   },
   onLoad: function () {
     // 页面加载时从 storage 中获取 openid
@@ -16,8 +17,13 @@ Page({
       openid: openid
     });
   },
-  bindDescription:function(e) {
-    console.log(e.detail.value)
+  bindQuantity(e) {
+    this.setData({
+      quantity: e.detail.value
+    })
+  },
+  bindDescription: function (e) {
+    // console.log(e.detail.value)
     this.setData({
       description: e.detail.value,
     });
@@ -46,9 +52,7 @@ Page({
     const price = this.data.price;
     const description = this.data.description;
     const category = this.data.array3[this.data.value3]; // 获取选择的种类
-    // console.log(description)
-
-
+    const quantity=this.data.quantity;
     // 发送 HTTP 请求给后端
     wx.request({
       url: 'http://localhost:12345/addProduct',
@@ -59,16 +63,25 @@ Page({
         price: price,
         description: description,
         category: category,
+        quantity:quantity,
         // 其他字段根据需要添加
       },
       success(res) {
         // 请求成功的处理逻辑
-        console.log('添加商品成功：', res.data);
-        wx.showToast({
-          title: '商品添加成功',
-          icon: 'success',
-          duration: 2000
-        });
+        if (res.statusCode === 201 && res.data && res.data.message === 'Product added successfully') {
+          wx.showToast({
+            title: '商品添加成功',
+            icon: 'success',
+            duration: 2000
+          });
+        } else {
+          wx.showToast({
+            title: '商品添加失败',
+            icon: 'none',
+            duration: 2000
+          });
+          console.error('添加商品失败：', res.data);
+        }
       },
       fail(err) {
         // 请求失败的处理逻辑
@@ -81,6 +94,7 @@ Page({
       }
     });
   },
+
 
 
 });
