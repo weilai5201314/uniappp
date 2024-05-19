@@ -4,7 +4,43 @@ Page({
     inputShowed: false,
     inputVal: '',
     isFocus: false,
+    products: [] // 用于存放商品数据
   },
+  onLoad() {
+    this.fetchProducts();
+  },
+  onShow(){
+    this.fetchProducts();
+  }
+  ,
+  fetchProducts() {
+    wx.request({
+      url: 'http://127.0.0.1:12345/getAllProducts',
+      method: 'GET',
+      success: (res) => {
+        if (res.statusCode === 200) {
+          this.setData({
+            products: res.data.products
+          });
+        } else {
+          wx.showToast({
+            title: '获取商品失败',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      },
+      fail: (err) => {
+        console.error('请求失败：', err);
+        wx.showToast({
+          title: '获取商品失败',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
+  },
+
   showInput() {
     this.setData({
       inputShowed: true,
