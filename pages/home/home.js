@@ -1,3 +1,5 @@
+const config=require("../../config")
+
 Page({
   mixins: [require('../mixin/common')],
   data: {
@@ -15,7 +17,7 @@ Page({
   ,
   fetchProducts() {
     wx.request({
-      url: 'http://127.0.0.1:12345/getAllProducts',
+      url: config.baseUrl+ '/getAllProducts',
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200) {

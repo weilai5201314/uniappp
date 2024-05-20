@@ -1,4 +1,5 @@
 // index.js
+const config=require("../../config")
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0';
 
 Page({
@@ -34,7 +35,7 @@ Page({
           // 获取用户信息
           // 将 code 和用户信息发送到后端服务器进行验证
           wx.request({
-            url: 'http://localhost:12345/login',
+            url: config.baseUrl+'/login',
             method: 'POST',
             data: {
               code: code,

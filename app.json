@@ -6,7 +6,9 @@
     "pages/settings/settings",
     "pages/shoppingcart/shoppingcart",
     "pages/add/add",
+    "pages/add/msg/successfull",
     "pages/chat/chat"
+    
   ],
   "window": {
     "navigationBarTextStyle": "black",

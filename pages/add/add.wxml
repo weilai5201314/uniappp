@@ -18,44 +18,45 @@
                   <label class="weui-label">商品名称</label>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input" placeholder="填写商品名称" placeholder-class="weui-input__placeholder" bindchange="bindproductname" />
+                  <input class="weui-input" placeholder="填写商品名称" placeholder-class="weui-input__placeholder" bindinput="bindproductname" />
                 </view>
               </view>
               <!-- 价格 -->
-              <view class="weui-cell weui-cell_active">
+              <view class="weui-cell weui-cell_active {{isPriceWarning ? 'weui-cell_warn' : ''}}">
                 <view class="weui-cell__hd">
                   <label class="weui-label">价格</label>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input" placeholder="填写商品价格" placeholder-class="weui-input__placeholder" bindchange="bindPrice" />
+                  <input class="weui-input" placeholder="填写商品价格" placeholder-class="weui-input__placeholder" bindinput="bindPrice" />
                 </view>
               </view>
+              <view class="weui-cells__tips weui-cells__tips_warn" style="{{isPriceWarning ? 'display:block' : 'display:none'}}">价格必须是整数或最多两位小数</view>
+
               <!-- 数量 -->
-              <view class="weui-cell weui-cell_active">
+              <view class="weui-cell weui-cell_active {{isQuantityWarning ? 'weui-cell_warn' : ''}}">
                 <view class="weui-cell__hd">
                   <label class="weui-label">数量</label>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input" placeholder="填写商品数量" placeholder-class="weui-input__placeholder" bindchange="bindQuantity" />
+                  <input class="weui-input" placeholder="填写商品数量" placeholder-class="weui-input__placeholder" bindinput="bindQuantity" />
+                </view>
+              </view>
+              <view class="weui-cells__tips weui-cells__tips_warn" style="{{isQuantityWarning ? 'display:block' : 'display:none'}}">数量必须是整数</view>
+
+              <!-- 种类 选择栏 -->
+              <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+                <view class="weui-cell__hd">
+                  <label class="weui-label" style="width: 3em;">种类</label>
+                </view>
+                <!-- 选择栏 -->
+                <view class="weui-cell__bd">
+                  <picker aria-role="combobox" bindchange="bindPicker3Change" range="{{array3}}">
+                    <view class="weui-select">{{array3[value3]}}</view>
+                  </picker>
                 </view>
               </view>
 
             </view>
-          </view>
-
-          <!-- 选择栏部分   种类 -->
-          <view class="weui-cells">
-            <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
-              <view class="weui-cell__hd">
-                <label class="weui-label" style="width: 3em;">种类</label>
-              </view>
-              <view class="weui-cell__bd">
-                <picker aria-role="combobox" bindchange="bindPicker3Change" range="{{array3}}">
-                  <view class="weui-select">{{array3[value3]}}</view>
-                </picker>
-              </view>
-            </view>
-
           </view>
 
           <!-- 商品描述部分 -->
@@ -64,9 +65,8 @@
             <view class="weui-cells weui-cells_form">
               <view class="weui-cell" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">
-                  <textarea class="weui-textarea" placeholder="请描述商品的特性、功能、尺寸、颜色等信息" placeholder-class="weui-input__placeholder" rows="3" bindchange="bindDescreption" bindblur="bindDescription"></textarea>
-                  <view aria-role="option" class="weui-textarea-counter"><span>0</span>/200
-                  </view>
+                  <textarea class="weui-textarea" placeholder="请描述商品的特性、功能、尺寸、颜色等信息" placeholder-class="weui-input__placeholder" rows="3" bindinput="bindDescription"></textarea>
+                  <view aria-role="option" class="weui-textarea-counter"><span>0</span>/200</view>
                 </view>
               </view>
             </view>
@@ -74,7 +74,6 @@
 
           <!-- 图片部分 -->
           <view class="page__bd">
-            <!-- <view class="weui-cells"> -->
             <view class="weui-cell weui-cell_uploader">
               <view class="weui-cell__bd">
                 <view class="weui-uploader">
@@ -83,9 +82,7 @@
                       <view class="weui-uploader__title">上传商品图片(选填)</view>
                       <view class="weui-uploader__info">{{files.length}}/3</view>
                     </view>
-                    <view class="weui-uploader__tips">
-                      上传提示
-                    </view>
+                    <view class="weui-uploader__tips">上传提示</view>
                   </view>
                   <view class="weui-uploader__bd">
                     <view class="weui-uploader__files" id="uploaderFiles">
@@ -94,14 +91,6 @@
                           <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
                         </view>
                       </block>
-                      <!-- <view class="weui-uploader__file">
-                                                            <image class="weui-uploader__img" src="../../images/icon_tabbar.png" mode="aspectFill" />
-                                                          </view>
-                                                          <view class="weui-uploader__file">
-                                                            <image class="weui-uploader__img" src="../../images/icon_tabbar.png" mode="aspectFill" />
-                                                          </view> -->
-
-
                     </view>
                     <view class="weui-uploader__input-box">
                       <view aria-role="button" aria-label="上传" class="weui-uploader__input"></view>
@@ -109,20 +98,17 @@
                   </view>
                 </view>
               </view>
-              <!-- </view> -->
             </view>
           </view>
 
           <!-- 确认按钮 -->
           <view class="weui-form__opr-area">
-            <a aria-role="button" class="weui-btn weui-btn_primary" bind:tap="addProduct">确定
-            </a>
+            <a aria-role="button" class="weui-btn weui-btn_primary" bind:tap="addProduct">确定</a>
           </view>
 
         </view>
       </view>
     </view>
   </view>
-
 
 </view>
