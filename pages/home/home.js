@@ -13,36 +13,7 @@ Page({
   },
   onShow(){
     this.fetchProducts();
-  }
-  ,
-  fetchProducts() {
-    wx.request({
-      url: config.baseUrl+ '/getAllProducts',
-      method: 'GET',
-      success: (res) => {
-        if (res.statusCode === 200) {
-          this.setData({
-            products: res.data.products
-          });
-        } else {
-          wx.showToast({
-            title: '获取商品失败',
-            icon: 'none',
-            duration: 2000
-          });
-        }
-      },
-      fail: (err) => {
-        console.error('请求失败：', err);
-        wx.showToast({
-          title: '获取商品失败',
-          icon: 'none',
-          duration: 2000
-        });
-      }
-    });
   },
-
   showInput() {
     this.setData({
       inputShowed: true,
@@ -70,9 +41,36 @@ Page({
       isFocus: true,
     });
   },
-
   search() {
     // 在这里编写搜索逻辑，可以根据 inputVal 的值执行相应的搜索操作
     console.log('执行搜索：', this.data.inputVal);
+  },
+  fetchProducts() {
+    wx.request({
+      url: config.baseUrl+ '/getAllProducts',
+      method: 'GET',
+      success: (res) => {
+        if (res.statusCode === 200) {
+          console.log(res)
+          this.setData({
+            products: res.data.products
+          });
+        } else {
+          wx.showToast({
+            title: '获取商品失败',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      },
+      fail: (err) => {
+        console.error('请求失败：', err);
+        wx.showToast({
+          title: '获取商品失败',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
   },
 });
