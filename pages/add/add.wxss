@@ -3,4 +3,25 @@
  * Copyright 2024 Tencent, Inc.
  * Licensed under the MIT license
  */
- .page{height:100%}
+.page {
+  height: 100%
+}
+
+/* 添加删除按钮的样式 */
+.weui-uploader__file {
+  position: relative;
+}
+
+.weui-uploader__file-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  font-size: 14px;
+}

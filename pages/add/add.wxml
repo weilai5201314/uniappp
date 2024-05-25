@@ -21,6 +21,7 @@
                   <input class="weui-input" placeholder="填写商品名称" placeholder-class="weui-input__placeholder" bindinput="bindproductname" />
                 </view>
               </view>
+
               <!-- 价格 -->
               <view class="weui-cell weui-cell_active {{isPriceWarning ? 'weui-cell_warn' : ''}}">
                 <view class="weui-cell__hd">
@@ -89,11 +90,15 @@
                       <block wx:for="{{files}}" wx:key="*this">
                         <view class="weui-uploader__file" id="{{item}}">
                           <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                          <!-- 删除按钮 -->
+                          <view class="weui-uploader__file-delete" data-index="{{index}}" bindtap="removeImage">
+                            <text class="weui-icon-cancel">X</text>
+                          </view>
                         </view>
                       </block>
                     </view>
                     <view class="weui-uploader__input-box">
-                      <view aria-role="button" aria-label="上传" class="weui-uploader__input"></view>
+                      <view aria-role="button" aria-label="上传" class="weui-uploader__input" bindtap="chooseMedia"></view>
                     </view>
                   </view>
                 </view>

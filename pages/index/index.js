@@ -1,5 +1,5 @@
 // index.js
-const config=require("../../config")
+const config = require("../../config")
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0';
 
 Page({
@@ -35,43 +35,60 @@ Page({
           // 获取用户信息
           // 将 code 和用户信息发送到后端服务器进行验证
           wx.request({
-            url: config.baseUrl+'/login',
+            url: config.baseUrl + '/login',
             method: 'POST',
             data: {
               code: code,
             },
             success: (res) => {
-              console.log('登录成功：', res.data);
-              // 可以在这里处理登录成功后的逻辑
-              const {
-                session_key,
-                openid
-              } = res.data;
-              // 将 session_key 和 openid 保存在本地存储中
-              wx.setStorage({
-                key: 'session_key',
-                data: session_key,
-                success: () => {
-                  console.log('session_key 保存成功');
-                },
-                fail: (err) => {
-                  console.error('session_key 保存失败', err);
-                }
-              });
-              wx.setStorage({
-                key: 'openid',
-                data: openid,
-                success: () => {
-                  console.log('openid 保存成功');
-                },
-                fail: (err) => {
-                  console.error('openid 保存失败', err);
-                }
-              });
-              // 存储成功后来到主页
-              wx.switchTab({
-                url: '/pages/home/home'
-              });
+              if (res.statusCode === 200) {
+                console.log('登录成功：', res.data);
+                // 可以在这里处理登录成功后的逻辑
+                const {
+                  session_key,
+                  openid
+                } = res.data;
+                // 将 session_key 和 openid 保存在本地存储中
+                wx.setStorage({
+                  key: 'session_key',
+                  data: session_key,
+                  success: () => {
+                    console.log('session_key 保存成功');
+                  },
+                  fail: (err) => {
+                    console.error('session_key 保存失败', err);
+                  }
+                });
+                wx.setStorage({
+                  key: 'openid',
+                  data: openid,
+                  success: () => {
+                    console.log('openid 保存成功');
+                  },
+                  fail: (err) => {
+                    console.error('openid 保存失败', err);
+                  }
+                });
+                // 存储成功后来到主页
+                wx.switchTab({
+                  url: '/pages/home/home'
+                });
+
+              } else if (res.statusCode === 500) {
+                wx.showToast({
+                  title: '服务器出错',
+                  icon: 'none',
+                  duration: 2000
+                });
+                console.error('服务器出错：', res.data);
+              }else {
+                wx.showToast({
+                  title: '请检测网络连接',
+                  icon: 'none',
+                  duration: 2000
+                });
+              }
+
             },
             fail: (err) => {
               console.error('登录失败：', err);

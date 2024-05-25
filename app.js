@@ -1,5 +1,5 @@
 // app.js
-require('./libs/Mixins.js');
+require('./libs/Mixins');
 
 const listeners = [];
 
