@@ -7,8 +7,9 @@
     "pages/shoppingcart/shoppingcart",
     "pages/add/add",
     "pages/add/msg/successfull",
+    "pages/productInfo/productInfo",
     "pages/chat/chat"
-    
+
   ],
   "window": {
     "navigationBarTextStyle": "black",

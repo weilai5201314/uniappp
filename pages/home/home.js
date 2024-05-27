@@ -1,4 +1,4 @@
-const config=require("../../config")
+const config = require("../../config")
 
 Page({
   mixins: [require('../mixin/common')],
@@ -11,7 +11,7 @@ Page({
   onLoad() {
     this.fetchProducts();
   },
-  onShow(){
+  onShow() {
     this.fetchProducts();
   },
   showInput() {
@@ -47,7 +47,7 @@ Page({
   },
   fetchProducts() {
     wx.request({
-      url: config.baseUrl+ '/getAllProducts',
+      url: config.baseUrl + '/getAllProducts',
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200) {
@@ -73,4 +73,11 @@ Page({
       }
     });
   },
+  goToDetail(e) {
+    const product = e.currentTarget.dataset.product;
+    wx.navigateTo({
+      url: `/pages/productInfo/productInfo?product=${JSON.stringify(product)}`
+    });
+  }
+
 });
