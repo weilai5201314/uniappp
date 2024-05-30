@@ -82,7 +82,7 @@ Page({
   goToDetail(e) {
     const product = e.currentTarget.dataset.product;
     wx.navigateTo({
-      url: `/pages/productInfo/productInfo?product=${JSON.stringify(product)}`
+      url: `/pages/shoppingcart/info/info?product=${JSON.stringify(product)}`
     });
   }
 });

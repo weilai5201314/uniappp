@@ -1,0 +1,87 @@
+<page-meta root-font-size="system" />
+<view class="page" data-weui-theme="{{theme}}" data-weui-mode="{{mode}}">
+  <view class="weui-form">
+    <view class="weui-form__bd">
+      <view class="weui-form__text-area">
+        <h2 class="weui-form__title">商品信息</h2>
+      </view>
+      <view class="weui-form__control-area">
+        <view class="weui-cells__group weui-cells__group_form">
+          <view class="weui-cells__group weui-cells__group_form">
+            <view class="weui-cells">
+
+              <!-- <view class="weui-cell weui-cell_active">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">商品ID</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{product.ProductID}}" disabled />
+                </view>
+              </view> -->
+
+              <view class="weui-cell weui-cell_active">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">商品名称</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{product.Title}}" disabled />
+                </view>
+              </view>
+
+              <view class="weui-cell weui-cell_active ">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">价格</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{product.Price}} 元" disabled />
+                </view>
+              </view>
+
+              <view class="weui-cell weui-cell_active ">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">购物车数量</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{product.Quantity}} 件" disabled />
+                </view>
+              </view>
+
+              <view class="weui-cell weui-cell_active ">
+                <view class="weui-cell__bd">
+                  <label class="weui-label">商品描述</label>
+                  <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" disabled>{{product.Description || "无描述"}}</textarea>
+                  </view>
+                </view>
+              </view>
+
+              <view class="weui-cell weui-cell_active ">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">商品图片</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <block wx:for="{{productImages}}" wx:key="*this">
+                    <image class="weui-media-box__thumb" src="{{item}}" alt bindtap="previewImage" data-url="{{item}}"></image>
+                  </block>
+                </view>
+              </view>
+
+              <!-- 确认按钮 -->
+
+              <view class="weui-cell weui-cell_active">
+                <view class="weui-cell weui-cell_active">
+                  <view class="weui-form__opr-area">
+                    <!-- 绑定 tap 事件，点击时调用 addToCart 函数 -->
+                    <a aria-role="button" class="weui-btn weui-btn_primary" bind:tap="">购买</a>
+                  </view>
+                </view>
+              </view>
+
+
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

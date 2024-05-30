@@ -2,93 +2,93 @@
 <view class="page" data-weui-theme="{{theme}}" data-weui-mode="{{mode}}">
   <view class="page__hd">
     <view class="page__title">个人中心</view>
-    <view class="page__desc">九宫格</view>
+    <!-- <view class="page__desc">九宫格</view> -->
   </view>
   <view class="weui-grids">
     <!-- 1 -->
-    <navigator class="weui-grid" aria-role="button" url="javascript:">
+    <navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="goToOrder" >
       <view class="weui-grid__icon">
-        <image src="../../images/icon_tabbar.png" alt></image>
+        <image src="../../images/settings/订单.png" alt></image>
       </view>
-      <view class="weui-grid__label">Grid</view>
+      <view class="weui-grid__label">订单</view>
     </navigator>
     <!-- 2 -->
     <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
-        <image src="../../images/icon_tabbar.png" alt></image>
+        <image src="../../images/settings/播放记录.png" alt></image>
       </view>
-      <view class="weui-grid__label">Grid</view>
+      <view class="weui-grid__label">浏览记录</view>
     </navigator>
     <!-- 3 -->
     <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
-        <image src="../../images/icon_tabbar.png" alt></image>
+        <image src="../../images/settings/问卷.png" alt></image>
       </view>
-      <view class="weui-grid__label">Grid</view>
+      <view class="weui-grid__label">反馈</view>
     </navigator>
     <!-- 4 -->
     <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
-        <image src="../../images/icon_tabbar.png" alt></image>
+        <image src="../../images/settings/设置.png" alt></image>
       </view>
-      <view class="weui-grid__label">Grid</view>
+      <view class="weui-grid__label">设置</view>
     </navigator>
     <!-- 5 -->
     <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
-        <image src="../../images/icon_tabbar.png" alt></image>
+        <image src="../../images/settings/帮助.png" alt></image>
       </view>
-      <view class="weui-grid__label">Grid</view>
+      <view class="weui-grid__label">帮助</view>
     </navigator>
     <!-- 6 -->
     <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
-        <image src="../../images/icon_tabbar.png" alt></image>
+        <image src="../../images/settings/发现.png" alt></image>
       </view>
-      <view class="weui-grid__label">Grid</view>
+      <view class="weui-grid__label">发现</view>
     </navigator>
     <!-- 7 -->
     <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
-        <image src="../../images/icon_tabbar.png" alt></image>
+        <image src="../../images/settings/测试.png" alt></image>
       </view>
-      <view class="weui-grid__label">Grid</view>
+      <view class="weui-grid__label">待开发</view>
     </navigator>
     <!-- 8 -->
-    <navigator class="weui-grid" aria-role="button" url="javascript:">
+    <!-- <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
         <image src="../../images/icon_tabbar.png" alt></image>
       </view>
       <view class="weui-grid__label">Grid</view>
-    </navigator>
+    </navigator> -->
     <!-- 9 -->
-    <navigator class="weui-grid" aria-role="button" url="javascript:">
+    <!-- <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
         <image src="../../images/icon_tabbar.png" alt></image>
       </view>
       <view class="weui-grid__label">Grid</view>
-    </navigator>
+    </navigator> -->
     <!-- 10 -->
-    <navigator class="weui-grid" aria-role="button" url="javascript:">
+    <!-- <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
         <image src="../../images/icon_tabbar.png" alt></image>
       </view>
       <view class="weui-grid__label">Grid</view>
-    </navigator>
+    </navigator> -->
     <!-- 11 -->
-    <navigator class="weui-grid" aria-role="button" url="javascript:">
+    <!-- <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
         <image src="../../images/icon_tabbar.png" alt></image>
       </view>
       <view class="weui-grid__label">Grid</view>
-    </navigator>
+    </navigator> -->
     <!-- 12 -->
-    <navigator class="weui-grid" aria-role="button" url="javascript:">
+    <!-- <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
         <image src="../../images/icon_tabbar.png" alt></image>
       </view>
       <view class="weui-grid__label">Grid</view>
-    </navigator>
+    </navigator> -->
 
   </view>
 </view>
