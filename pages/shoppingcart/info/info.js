@@ -64,5 +64,46 @@ Page({
         });
       }
     });
+  },
+  deleteToCart: function () {
+    const openid = wx.getStorageSync('openid');
+    const product = this.data.product;
+    const productid = product.ProductID;
+
+    wx.request({
+      url: config.baseUrl + '/deleteShoppingCart',
+      method: 'DELETE',
+      data: {
+        openid: openid,
+        productID: productid
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        if (res.statusCode === 201) {
+          wx.showToast({
+            title: '商品从购物车移除',
+            icon: 'success',
+            duration: 2000
+          });
+          wx.navigateBack();
+        } else {
+          wx.showToast({
+            title: '移除购物车失败，请重试',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      },
+      fail: function (error) {
+        console.error('Error adding product to shopping cart:', error);
+        wx.showToast({
+          title: '移除购物车失败，请检查网络',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
   }
 });

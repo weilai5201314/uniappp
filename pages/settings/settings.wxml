@@ -15,17 +15,20 @@
     <!-- 2 -->
     <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">
+        <image src="../../images/settings/创作.png" alt></image>
+      </view>
+      <view class="weui-grid__label">编辑商品</view>
+    </navigator>
+
+    <!-- 3 -->
+    <navigator class="weui-grid" aria-role="button" url="javascript:">
+      <view class="weui-grid__icon">
         <image src="../../images/settings/播放记录.png" alt></image>
       </view>
       <view class="weui-grid__label">浏览记录</view>
     </navigator>
-    <!-- 3 -->
-    <navigator class="weui-grid" aria-role="button" url="javascript:">
-      <view class="weui-grid__icon">
-        <image src="../../images/settings/问卷.png" alt></image>
-      </view>
-      <view class="weui-grid__label">反馈</view>
-    </navigator>
+    
+    
     <!-- 4 -->
     <navigator class="weui-grid" aria-role="button" url="javascript:">
       <view class="weui-grid__icon">

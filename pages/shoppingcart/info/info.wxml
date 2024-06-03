@@ -66,16 +66,25 @@
                 </view>
               </view>
 
-              <!-- 确认按钮 -->
-
+                <!-- 确认按钮 -->
               <view class="weui-cell weui-cell_active">
-                <view class="weui-cell weui-cell_active">
+                <view class="weui-cell__bd">
                   <view class="weui-form__opr-area">
                     <!-- 绑定 tap 事件，点击时调用 addToCart 函数 -->
                     <a aria-role="button" class="weui-btn weui-btn_primary" bind:tap="">购买</a>
                   </view>
                 </view>
               </view>
+
+              <!-- 删除按钮 -->
+              <!-- <view class="weui-cell weui-cell_active"> -->
+                <view class="weui-cell__bd">
+                  <view class="weui-form__opr-area">
+                    <!-- 绑定 tap 事件，点击时调用 addToCart 函数 -->
+                    <a aria-role="button" class="weui-btn weui-btn_warn" bind:tap="deleteToCart">删除物品</a>
+                  </view>
+                </view>
+              <!-- </view> -->
 
 
             </view>

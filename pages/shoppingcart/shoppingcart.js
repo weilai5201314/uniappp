@@ -61,6 +61,7 @@ Page({
           this.setData({
             cartItems: res.data.cartItems
           });
+          console.log(this.data.cartItems)
         } else {
           wx.showToast({
             title: '获取购物车失败',
